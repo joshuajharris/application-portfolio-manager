@@ -1,7 +1,7 @@
 var restify = require('restify'),
     sessions = require('client-sessions'),
     passport = require('passport'),
-    GithubStrategy = require('passport-github2'),
+    GithubStrategy = require('passport-github').Strategy,
     fs = require('fs');
 
 var controllers = {},
