@@ -9,6 +9,10 @@
   "author": "joshuajharris",
   "license": "MIT",
   "dependencies": {
+    "client-sessions": "^0.7.0",
+    "mongoose": "^4.0.8",
+    "passport": "^0.2.2",
+    "passport-github2": "^0.1.9",
     "restify": "^3.0.3"
   }
 }

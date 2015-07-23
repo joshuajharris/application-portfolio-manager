@@ -1,1 +1,2 @@
-require('./app/core/router.js');
+require('./config/mongoose.js');
+require('./app/router.js');

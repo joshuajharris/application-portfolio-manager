@@ -1,4 +1,7 @@
 var restify = require('restify'),
+    sessions = require('client-sessions'),
+    passport = require('passport'),
+    GithubStrategy = require('passport-github2'),
     fs = require('fs');
 
 var controllers = {},
@@ -13,9 +16,15 @@ var server = restify.createServer();
 
 server
   .use(restify.fullResponse())
-  .use(restify.bodyParser());
+  .use(restify.bodyParser())
+  .use(sessions({
+    secret: 'lesclaypoolsduodetwang'
+  }))
+  .use(passport.initialize())
+  .use(passport.session());
 
 server.get('/', controllers.test.home);
+server.get('/application', controllers.application.view);
 
 var port = process.env.PORT || 3000;
 server.listen(port, function(err) {
